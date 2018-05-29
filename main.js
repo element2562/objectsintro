@@ -29,5 +29,11 @@ voteRegisterUrl: "www.registertovoteformepls.gov"
 function changeEverything(objectSelector, keySelector, valueSelector){
 objectSelector[`${keySelector}`] = `${valueSelector}`;
 }
+let testText = "testing for whatever";
 changeEverything(elizabethsanger, 'myCreation', "none of yo beezwax");
-console.log(elizabethsanger);
+const createdElement = document.createElement("article");
+const textInside = document.createTextNode(elizabethsanger.congressionalDistrict);
+createdElement.setAttribute("id", elizabethsanger.congressionalDistrict);
+createdElement.appendChild(textInside);
+const bodySelector = document.querySelector("body");
+bodySelector.appendChild(createdElement);
