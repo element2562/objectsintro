@@ -28,16 +28,20 @@ voteRegisterUrl: "www.registertovoteformepls.gov"
 }
 function changeEverything(objectSelector, keySelector, valueSelector){
 objectSelector[`${keySelector}`] = `${valueSelector}`;
-}
-let testText = "testing for whatever";
+};
 changeEverything(elizabethsanger, 'myCreation', "none of yo beezwax");
 const createArticle = () => {
     const createdElement = document.createElement("article");
-    const textInside = document.createTextNode(elizabethsanger.platformStatements);
     createdElement.setAttribute("id", elizabethsanger.congressionalDistrict);
-    createdElement.appendChild(textInside);
     const bodySelector = document.querySelector("body");
     bodySelector.appendChild(createdElement);
+
+    for (let x in elizabethsanger.platformStatements){
+    const sectionCreator = document.createElement("section");
+    const sectionText = document.createTextNode(elizabethsanger.platformStatements[x]);
+    sectionCreator.appendChild(sectionText);
+    createdElement.appendChild(sectionCreator);
+    }
 }
 
 
